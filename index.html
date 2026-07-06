@@ -188,37 +188,47 @@
            ════════════════════════════════ */
         #about { display: flex; flex-direction: column; }
 
-        /* Hero: photo + quote card */
+        /* Hero: split photo + quote card */
         .about-hero {
-            position: relative;
+            display: flex;
+            flex-direction: row;
             width: 100%;
-            height: 115vh;
+            height: 80vh;
             overflow: hidden;
             flex-shrink: 0;
+            background-color: #f7f4ef;
+        }
+
+        .about-photo-col {
+            flex: 1.2;
+            position: relative;
+            height: 100%;
+            overflow: hidden;
         }
 
         .about-photo {
-            position: absolute;
-            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
-            z-index: 1;
+            object-position: center center;
+        }
+
+        .about-quote-col {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            background-color: #f7f4ef;
         }
 
         .quote-card {
-            position: absolute;
-            right: 80px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 46%;
-            max-width: 580px;
-            background-color: #f7f4ef;
+            width: 100%;
+            max-width: 500px;
+            background-color: #ffffff;
             border-radius: 18px;
             padding: 48px 50px 40px 50px;
-            z-index: 10;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
 
         .quote-card-body {
@@ -350,23 +360,41 @@
 
 
             /* ── About Hero: full-page photo + card aligned right ── */
-            .about-hero { height: 70vh; position: relative; }
-            .about-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-            .quote-card {
-                position: absolute;
-                right: 16px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 52%;
-                max-width: none;
-                padding: 16px 14px 14px;
-                border-radius: 10px;
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-                z-index: 10;
+            /* ── About Hero: stacked on mobile ── */
+            .about-hero {
+                flex-direction: column;
+                height: auto;
             }
-            .quote-card-body { font-size: 10px; line-height: 1.5; margin-bottom: 10px; }
-            .open-mark { font-size: 13px; vertical-align: -3px; }
-            .quote-card-attribution { font-size: 8px; }
+            .about-photo-col {
+                width: 100%;
+                height: 50vh;
+            }
+            .about-photo {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            .about-quote-col {
+                width: 100%;
+                padding: 0;
+                background-color: transparent;
+            }
+            .quote-card {
+                position: relative;
+                left: unset;
+                top: unset;
+                transform: none;
+                width: calc(100% - 48px);
+                margin: -40px auto 40px auto;
+                padding: 32px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+                background-color: #f7f4ef;
+            }
+            .quote-card-body { font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+            .open-mark { font-size: 16px; vertical-align: -3px; }
+            .quote-card-attribution { font-size: 9px; }
 
             /* ── Bio ── */
             .bio-section { padding: 28px 16px 40px; max-width: 100%; }
@@ -423,17 +451,21 @@
     ════════════════════════════════ -->
     <section id="about">
 
-        <!-- Hero: blurred photo + quote card -->
+        <!-- Hero: split photo + quote card -->
         <div class="about-hero">
-            <img src="danielle.jpg" alt="Danielle Niyotwagira" class="about-photo">
-            <div class="quote-card">
-                <p class="quote-card-body">
-                    <span class="open-mark">"</span>I do not set aside the
-                    <span class="highlight">grace of God</span>; for if
-                    righteousness comes through the law, then
-                    <span class="highlight">Christ died in vain.</span>"
-                </p>
-                <p class="quote-card-attribution">Galatians 2:21</p>
+            <div class="about-photo-col">
+                <img src="danielle.jpg" alt="Danielle Niyotwagira" class="about-photo">
+            </div>
+            <div class="about-quote-col">
+                <div class="quote-card">
+                    <p class="quote-card-body">
+                        <span class="open-mark">"</span>I do not set aside the
+                        <span class="highlight">grace of God</span>; for if
+                        righteousness comes through the law, then
+                        <span class="highlight">Christ died in vain.</span>"
+                    </p>
+                    <p class="quote-card-attribution">Galatians 2:21</p>
+                </div>
             </div>
         </div>
 
