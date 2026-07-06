@@ -359,99 +359,105 @@
 
             html, body { overflow-x: hidden; max-width: 100%; }
 
-            /* ── Nav: stacked and centered ── */
+            /* ── Nav: same horizontal row, scaled ── */
             .site-nav {
-                flex-direction: column;
-                padding: 24px 20px 0 20px;
-                gap: 16px;
-                text-align: center;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px 16px 0;
+                gap: 8px;
+                width: 100%;
+                box-sizing: border-box;
             }
-            .site-logo { font-size: 36px; white-space: normal; }
-            .nav-links { gap: 8px; flex-wrap: wrap; justify-content: center; }
-            .nav-btn { font-size: 11px; padding: 8px 16px; border-radius: 6px; }
+            .site-logo { font-size: 18px; white-space: nowrap; flex-shrink: 1; min-width: 0; }
+            .nav-links { gap: 4px; flex-shrink: 0; }
+            .nav-btn { font-size: 7px; padding: 4px 8px; letter-spacing: 0; border-radius: 4px; white-space: nowrap; }
 
-            /* ── Home: stacked layout, cover on top ── */
+            /* ── Home: same side-by-side, scaled ── */
             #home { min-height: unset; }
             .home-inner {
-                flex-direction: column-reverse;
-                align-items: center;
-                padding: 40px 24px 60px 24px;
-                gap: 40px;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 32px 16px 36px;
+                gap: 16px;
             }
             .home-left {
-                flex: unset;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+                flex: 1;
+                min-width: 0;
+                display: block;
+                text-align: left;
             }
             .home-quote-container {
-                margin-bottom: 0;
+                margin-bottom: 12px;
             }
             .home-quote-text {
-                font-size: 18px;
-                line-height: 1.5;
-                margin-bottom: 16px;
-                text-align: center;
+                font-size: 11px;
+                line-height: 1.45;
+                margin-bottom: 8px;
+                text-align: left;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
-            .home-author { font-size: 13px; text-align: center; }
-            .home-author-title { font-size: 10px; margin-top: 4px; text-align: center; }
+            .home-author { font-size: 9px; text-align: left; }
+            .home-author-title { font-size: 7.5px; margin-top: 2px; text-align: left; }
             .order-btn {
-                margin-top: 28px;
-                padding: 6px 24px 6px 6px;
-                gap: 12px;
-                border-radius: 40px;
+                margin-top: 12px;
+                display: inline-flex;
+                padding: 4px 10px 4px 4px;
+                gap: 6px;
+                border-radius: 24px;
             }
-            .arrow-circle { width: 36px; height: 36px; border-width: 2px; }
-            .arrow-circle svg { width: 16px; height: 16px; }
-            .order-text { font-size: 12px; letter-spacing: 0.5px; }
+            .arrow-circle { width: 22px; height: 22px; border-width: 1.5px; }
+            .arrow-circle svg { width: 10px; height: 10px; }
+            .order-text { font-size: 8px; letter-spacing: 0.5px; }
 
-            .home-right { flex: unset; width: 100%; justify-content: center; }
-            .book-img { max-width: 200px; }
+            .home-right { flex: 0 0 40%; display: flex; justify-content: center; }
+            .book-img { max-width: 100%; height: auto; }
 
-            /* ── Book at a Glance: stacked ── */
+            /* ── Book at a Glance: same side-by-side, scaled ── */
             .glance-inner {
-                flex-direction: column;
-                padding: 60px 24px;
-                gap: 32px;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 28px 16px 36px;
+                gap: 20px;
             }
             .glance-left {
-                border-left: 4px solid #3cc0c7;
-                padding-left: 20px;
-                width: 100%;
+                border-left: 2px solid #3cc0c7;
+                padding-left: 12px;
+                flex: 1;
             }
-            .glance-quote { font-size: 20px; line-height: 1.6; margin-bottom: 16px; }
-            .glance-source { font-size: 11px; }
-            .glance-right { gap: 20px; padding-top: 0; }
-            .glance-body { font-size: 15px; line-height: 1.8; }
-            .glance-divider { margin: 0 24px; }
+            .glance-quote { font-size: 12px; line-height: 1.55; margin-bottom: 12px; }
+            .glance-source { font-size: 8px; letter-spacing: 1px; }
+            .glance-right { flex: 1; gap: 14px; padding-top: 4px; }
+            .glance-body { font-size: 11px; line-height: 1.75; }
+            .glance-divider { margin: 0 16px; }
 
-            /* ── About Hero: stacked photo and card ── */
-            .about-hero { height: auto; display: flex; flex-direction: column; }
-            .about-photo { position: relative; height: 50vh; width: 100%; object-fit: cover; }
+            /* ── About Hero: full-page photo + card aligned right ── */
+            .about-hero { height: 70vh; position: relative; }
+            .about-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
             .quote-card {
-                position: relative;
-                left: unset;
-                top: unset;
-                transform: none;
-                width: calc(100% - 48px);
-                margin: -40px auto 40px auto;
-                padding: 32px 24px;
-                border-radius: 12px;
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 52%;
+                max-width: none;
+                padding: 16px 14px 14px;
+                border-radius: 10px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+                z-index: 10;
             }
-            .quote-card-body { font-size: 18px; line-height: 1.5; margin-bottom: 20px; }
-            .open-mark { font-size: 24px; vertical-align: -4px; }
-            .quote-card-attribution { font-size: 12px; }
-
-
+            .quote-card-body { font-size: 10px; line-height: 1.5; margin-bottom: 10px; }
+            .open-mark { font-size: 13px; vertical-align: -3px; }
+            .quote-card-attribution { font-size: 8px; }
 
             /* ── Bio ── */
-            .bio-section { padding: 60px 24px; max-width: 100%; }
-            .bio-label { font-size: 11px; margin-bottom: 24px; }
-            .bio-text { font-size: 15px; line-height: 1.8; }
-            .bio-text p + p { margin-top: 20px; }
+            .bio-section { padding: 28px 16px 40px; max-width: 100%; }
+            .bio-label { font-size: 8px; letter-spacing: 1.5px; margin-bottom: 16px; }
+            .bio-text { font-size: 11px; line-height: 1.85; }
+            .bio-text p + p { margin-top: 14px; }
         }
     </style>
 </head>
