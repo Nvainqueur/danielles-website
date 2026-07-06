@@ -309,15 +309,16 @@
             #home { min-height: unset; }
             .home-inner {
                 flex-direction: row;
-                align-items: flex-start;
+                align-items: center;
                 padding: 32px 16px 36px;
                 gap: 16px;
             }
             .home-left {
                 flex: 1;
                 min-width: 0;
-                display: block;
-                text-align: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
             .home-quote-container {
                 margin-bottom: 12px;
