@@ -188,47 +188,37 @@
            ════════════════════════════════ */
         #about { display: flex; flex-direction: column; }
 
-        /* Hero: split photo + quote card */
+        /* Hero: photo + quote card */
         .about-hero {
-            display: flex;
-            flex-direction: row;
+            position: relative;
             width: 100%;
-            height: 80vh;
+            height: 115vh;
             overflow: hidden;
             flex-shrink: 0;
-            background-color: #f7f4ef;
-        }
-
-        .about-photo-col {
-            flex: 1.2;
-            position: relative;
-            height: 100%;
-            overflow: hidden;
         }
 
         .about-photo {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center center;
-        }
-
-        .about-quote-col {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px;
-            background-color: #f7f4ef;
+            z-index: 1;
         }
 
         .quote-card {
-            width: 100%;
-            max-width: 500px;
-            background-color: #ffffff;
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46%;
+            max-width: 580px;
+            background-color: #f7f4ef;
             border-radius: 18px;
             padding: 48px 50px 40px 50px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            z-index: 10;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
         }
 
         .quote-card-body {
@@ -359,30 +349,24 @@
 
 
 
-            /* ── About Hero: full-page photo + card aligned right ── */
             /* ── About Hero: stacked on mobile ── */
             .about-hero {
-                flex-direction: column;
                 height: auto;
-            }
-            .about-photo-col {
-                width: 100%;
-                height: 50vh;
+                display: flex;
+                flex-direction: column;
+                position: relative;
             }
             .about-photo {
+                position: relative;
                 width: 100%;
-                height: 100%;
+                height: 50vh;
                 object-fit: cover;
                 object-position: center;
-            }
-            .about-quote-col {
-                width: 100%;
-                padding: 0;
-                background-color: transparent;
             }
             .quote-card {
                 position: relative;
                 left: unset;
+                right: unset;
                 top: unset;
                 transform: none;
                 width: calc(100% - 48px);
@@ -391,6 +375,7 @@
                 border-radius: 12px;
                 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
                 background-color: #f7f4ef;
+                z-index: 10;
             }
             .quote-card-body { font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
             .open-mark { font-size: 16px; vertical-align: -3px; }
@@ -451,21 +436,17 @@
     ════════════════════════════════ -->
     <section id="about">
 
-        <!-- Hero: split photo + quote card -->
+        <!-- Hero: photo + quote card -->
         <div class="about-hero">
-            <div class="about-photo-col">
-                <img src="danielle.jpg" alt="Danielle Niyotwagira" class="about-photo">
-            </div>
-            <div class="about-quote-col">
-                <div class="quote-card">
-                    <p class="quote-card-body">
-                        <span class="open-mark">"</span>I do not set aside the
-                        <span class="highlight">grace of God</span>; for if
-                        righteousness comes through the law, then
-                        <span class="highlight">Christ died in vain.</span>"
-                    </p>
-                    <p class="quote-card-attribution">Galatians 2:21</p>
-                </div>
+            <img src="danielle.jpg" alt="Danielle Niyotwagira" class="about-photo">
+            <div class="quote-card">
+                <p class="quote-card-body">
+                    <span class="open-mark">"</span>I do not set aside the
+                    <span class="highlight">grace of God</span>; for if
+                    righteousness comes through the law, then
+                    <span class="highlight">Christ died in vain.</span>"
+                </p>
+                <p class="quote-card-attribution">Galatians 2:21</p>
             </div>
         </div>
 
