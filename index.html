@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Self-Righteous Saint - Danielle Niyotwagira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ════════════════════════════════
+           HERO NAV (inside home section)
+           ════════════════════════════════ */
+        .site-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 36px 80px 0 80px;
+        }
+
+        .site-logo {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            font-size: 68px;
+            color: #ffffff;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background-color: #111111;
+            color: #ffffff;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            transition: background-color 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #2a2a2a;
+        }
+
+        /* ════════════════════════════════
+           SECTION 1 — HOME
+           ════════════════════════════════ */
+        #home {
+            background-color: #3cc0c7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .home-inner {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 80px 80px 80px;
+            gap: 30px;
+        }
+
+        .home-left {
+            flex: 0 0 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .home-quote-container {
+            margin-bottom: 24px;
+        }
+
+        .home-quote-text {
+            font-family: 'Lora', serif;
+            font-size: 27px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.45;
+            color: #ffffff;
+            margin-bottom: 22px;
+        }
+
+        .home-author {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #000000;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        .home-author-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
+        }
+
+        .order-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #111111;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            padding: 7px 28px 7px 7px;
+            gap: 16px;
+            margin-top: 36px;
+            width: fit-content;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .order-btn:hover { background-color: #2a2a2a; }
+
+        .arrow-circle {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .arrow-circle svg { width: 20px; height: 20px; }
+
+        .order-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .home-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .book-img {
+            width: 100%;
+            max-width: 454px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0px 24px 32px rgba(0, 0, 0, 0.22));
+        }
+
+        /* ════════════════════════════════
+           SECTION 2 — BOOK AT A GLANCE
+           ════════════════════════════════ */
+        #glance {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glance-inner {
+            display: flex;
+            align-items: flex-start;
+            padding: 80px 80px 100px 80px;
+            gap: 80px;
+        }
+
+        .glance-left {
+            flex: 1;
+            border-left: 4px solid #3cc0c7;
+            padding-left: 28px;
+        }
+
+        .glance-quote {
+            font-family: 'Lora', serif;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.65;
+            color: #2a2a2a;
+            margin-bottom: 30px;
+        }
+
+        .glance-quote .strikethrough {
+            text-decoration: line-through;
+            text-decoration-color: #b83232;
+            text-decoration-thickness: 2px;
+            color: #5a3a3a;
+        }
+
+        .glance-source {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #3cc0c7;
+        }
+
+        .glance-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            padding-top: 6px;
+        }
+
+        .glance-body {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.95;
+            color: #444444;
+        }
+
+        .glance-body strong { font-weight: 700; color: #2a2a2a; }
+        .glance-body strong em,
+        .glance-body em strong { font-style: italic; font-weight: 700; color: #2a2a2a; }
+
+        .glance-divider {
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 0 80px;
+        }
+
+        /* ════════════════════════════════
+           SECTION 3 — ABOUT THE AUTHOR
+           ════════════════════════════════ */
+        #about { display: flex; flex-direction: column; }
+
+        /* Hero: photo + quote card */
+        .about-hero {
+            position: relative;
+            width: 100%;
+            height: 115vh;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .about-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            z-index: 1;
+        }
+
+        .quote-card {
+            position: absolute;
+            left: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46%;
+            max-width: 580px;
+            background-color: #f7f4ef;
+            border-radius: 18px;
+            padding: 48px 50px 40px 50px;
+            z-index: 10;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .quote-card-body {
+            font-family: 'Lora', serif;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1.55;
+            color: #1a1a1a;
+            margin-bottom: 32px;
+        }
+
+        .open-mark {
+            font-size: 32px;
+            line-height: 0;
+            vertical-align: -6px;
+            margin-right: 2px;
+        }
+
+        .highlight {
+            background-color: #3cc0c7;
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .quote-card-attribution {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: #666666;
+        }
+
+        /* Teal text section */
+        .about-text-section {
+            background-color: #3cc0c7;
+            padding: 80px 80px;
+        }
+
+        .about-text-intro {
+            font-family: 'Lora', serif;
+            font-size: 13px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+        }
+
+        .about-text-body {
+            font-family: 'Lora', serif;
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 1.9;
+            color: #ffffff;
+            max-width: 900px;
+        }
+
+        .about-text-body p + p { margin-top: 32px; }
+
+        /* Second photo */
+        .about-photo-section {
+            width: 100%;
+            line-height: 0;
+        }
+
+        .about-photo-2 {
+            width: 100%;
+            height: 115vh;
+            display: block;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        /* Bio */
+        .bio-section {
+            background-color: #ffffff;
+            padding: 80px 80px 100px 80px;
+            max-width: 860px;
+        }
+
+        .bio-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #3cc0c7;
+            margin-bottom: 36px;
+        }
+
+        .bio-text {
+            font-family: 'Lora', serif;
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 1.9;
+            color: #333333;
+        }
+
+        .bio-text p + p { margin-top: 28px; }
+
+        /* ════════════════════════════════
+           RESPONSIVE — MOBILE (≤768px)
+           Same layout as desktop, scaled down
+           ════════════════════════════════ */
+        @media (max-width: 768px) {
+
+            html, body { overflow-x: hidden; max-width: 100%; }
+
+            /* ── Nav: stacked and centered ── */
+            .site-nav {
+                flex-direction: column;
+                padding: 24px 20px 0 20px;
+                gap: 16px;
+                text-align: center;
+            }
+            .site-logo { font-size: 36px; white-space: normal; }
+            .nav-links { gap: 8px; flex-wrap: wrap; justify-content: center; }
+            .nav-btn { font-size: 11px; padding: 8px 16px; border-radius: 6px; }
+
+            /* ── Home: stacked layout, cover on top ── */
+            #home { min-height: unset; }
+            .home-inner {
+                flex-direction: column-reverse;
+                align-items: center;
+                padding: 40px 24px 60px 24px;
+                gap: 40px;
+            }
+            .home-left {
+                flex: unset;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .home-quote-container {
+                margin-bottom: 0;
+            }
+            .home-quote-text {
+                font-size: 18px;
+                line-height: 1.5;
+                margin-bottom: 16px;
+                text-align: center;
+            }
+            .home-author { font-size: 13px; text-align: center; }
+            .home-author-title { font-size: 10px; margin-top: 4px; text-align: center; }
+            .order-btn {
+                margin-top: 28px;
+                padding: 6px 24px 6px 6px;
+                gap: 12px;
+                border-radius: 40px;
+            }
+            .arrow-circle { width: 36px; height: 36px; border-width: 2px; }
+            .arrow-circle svg { width: 16px; height: 16px; }
+            .order-text { font-size: 12px; letter-spacing: 0.5px; }
+
+            .home-right { flex: unset; width: 100%; justify-content: center; }
+            .book-img { max-width: 200px; }
+
+            /* ── Book at a Glance: stacked ── */
+            .glance-inner {
+                flex-direction: column;
+                padding: 60px 24px;
+                gap: 32px;
+            }
+            .glance-left {
+                border-left: 4px solid #3cc0c7;
+                padding-left: 20px;
+                width: 100%;
+            }
+            .glance-quote { font-size: 20px; line-height: 1.6; margin-bottom: 16px; }
+            .glance-source { font-size: 11px; }
+            .glance-right { gap: 20px; padding-top: 0; }
+            .glance-body { font-size: 15px; line-height: 1.8; }
+            .glance-divider { margin: 0 24px; }
+
+            /* ── About Hero: stacked photo and card ── */
+            .about-hero { height: auto; display: flex; flex-direction: column; }
+            .about-photo { position: relative; height: 50vh; width: 100%; object-fit: cover; }
+            .quote-card {
+                position: relative;
+                left: unset;
+                top: unset;
+                transform: none;
+                width: calc(100% - 48px);
+                margin: -40px auto 40px auto;
+                padding: 32px 24px;
+                border-radius: 12px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            }
+            .quote-card-body { font-size: 18px; line-height: 1.5; margin-bottom: 20px; }
+            .open-mark { font-size: 24px; vertical-align: -4px; }
+            .quote-card-attribution { font-size: 12px; }
+
+            /* ── About Text ── */
+            .about-text-section { padding: 60px 24px; }
+            .about-text-intro { font-size: 11px; margin-bottom: 24px; }
+            .about-text-body { font-size: 15px; line-height: 1.8; }
+            .about-text-body p + p { margin-top: 24px; }
+
+            /* ── Second Photo ── */
+            .about-photo-section { padding: 0; }
+            .about-photo-2 { width: 100%; height: 50vh; object-fit: cover; }
+
+            /* ── Bio ── */
+            .bio-section { padding: 60px 24px; max-width: 100%; }
+            .bio-label { font-size: 11px; margin-bottom: 24px; }
+            .bio-text { font-size: 15px; line-height: 1.8; }
+            .bio-text p + p { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ════════════════════════════════
+         SECTION 1 — HOME
+    ════════════════════════════════ -->
+    <section id="home">
+        <nav class="site-nav">
+            <a href="#home" class="site-logo">Danielle Niyotwagira</a>
+            <div class="nav-links">
+                <a href="#home"   class="nav-btn" data-section="home">Home</a>
+                <a href="#glance" class="nav-btn" data-section="glance">The Book at a Glance</a>
+                <a href="#about"  class="nav-btn" data-section="about">About the Author</a>
+            </div>
+        </nav>
+        <div class="home-inner">
+            <div class="home-left">
+                <div class="home-quote-container">
+                    <p class="home-quote-text">
+                        "What if the greatest obstacle between you and God isn't your failure — but your performance? Danielle writes with rare honesty about the exhausting treadmill of spiritual striving, and the radical grace waiting on the other side."
+                    </p>
+                    <h3 class="home-author">JOHN DOE</h3>
+                    <p class="home-author-title">Author of Following God</p>
+                </div>
+
+                <a href="#" class="order-btn">
+                    <div class="arrow-circle">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 10H17M17 10L11 4M17 10L11 16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="order-text">Order Here</span>
+                </a>
+            </div>
+
+            <div class="home-right">
+                <img src="book.png" alt="The Self-Righteous Saint by Danielle Niyotwagira" class="book-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION 2 — BOOK AT A GLANCE
+    ════════════════════════════════ -->
+    <section id="glance">
+        <div class="glance-inner">
+            <div class="glance-left">
+                <p class="glance-quote">
+                    "What if your greatest obstacle to spiritual freedom wasn't your sin — but your <span class="strikethrough">self-righteousness</span>? Danielle writes with the kind of raw honesty that makes readers feel seen, undone, and finally free."
+                </p>
+                <p class="glance-source">— Advance Praise</p>
+            </div>
+
+            <div class="glance-right">
+                <p class="glance-body">
+                    We've all been there — striving harder, doing more, quietly convinced that if we just get it <strong>right enough</strong>, God will be pleased. But what if the striving itself is the problem?
+                </p>
+                <p class="glance-body">
+                    In <strong><em>The Self-Righteous Saint</em></strong>, Danielle Niyotwagira traces her own journey from performance-driven faith to the radical rest of abiding — and invites readers to make the same courageous shift.
+                </p>
+            </div>
+        </div>
+        <div class="glance-divider"></div>
+    </section>
+
+    <!-- ════════════════════════════════
+         SECTION 3 — ABOUT THE AUTHOR
+    ════════════════════════════════ -->
+    <section id="about">
+
+        <!-- Hero: blurred photo + quote card -->
+        <div class="about-hero">
+            <img src="danielle.jpg" alt="Danielle Niyotwagira" class="about-photo">
+            <div class="quote-card">
+                <p class="quote-card-body">
+                    <span class="open-mark">"</span>I do not set aside the
+                    <span class="highlight">grace of God</span>; for if
+                    righteousness comes through the law, then
+                    <span class="highlight">Christ died in vain.</span>"
+                </p>
+                <p class="quote-card-attribution">Galatians 2:21</p>
+            </div>
+        </div>
+
+        <!-- Teal "In her own words" text -->
+        <div class="about-text-section">
+            <p class="about-text-intro">In her own words</p>
+            <div class="about-text-body">
+                <p>My most important realization in the past 5 years is that the most dangerous aspect of self-righteousness is how easily it masquerades as spiritual maturity. When you're convinced that your motives are pure, your theology is sound, and your heart is right before God, it becomes almost impossible to recognize the ways that pride has infected your faith. You can quote verses about humility while looking down on others. You can preach about grace while keeping a mental scorecard of who's really living up to biblical standards. You can sing about God's love while harboring criticism and judgment toward fellow believers who don't measure up to your expectations.</p>
+                <p>This book is my attempt to shine a light on this particular form of spiritual blindness. Not from a position of having arrived at perfect humility, but from the perspective of someone who is still learning what it means to live in the freedom and grace given through our Lord Jesus Christ. It's written for anyone who has ever struggled with the tension between knowing the right answers and living them out with genuine love and humility.</p>
+            </div>
+        </div>
+
+        <!-- Second photo -->
+        <div class="about-photo-section">
+            <img src="danielle2.jpg" alt="Danielle Niyotwagira" class="about-photo-2">
+        </div>
+
+        <!-- Bio -->
+        <div class="bio-section">
+            <p class="bio-label">About the Author</p>
+            <div class="bio-text">
+                <p>You are probably visiting this page because you'd like to learn a little more about me.</p>
+                <p>My name is Danielle Nicole Niyotwagira. I am a wife, a mother to two wonderful little girls, and a teacher specializing in special education.</p>
+                <p>Over the years, I have learned that you do not need to be fearless or have a perfect plan to move forward. You simply have to decide that where God is leading you is greater than the fear trying to hold you back.</p>
+                <p>My hope is that this book sparks something within you and helps you allow Christ to transform the way you understand His grace — reminding you that His grace truly is enough.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        // Highlight active nav button based on scroll position
+        const sections = document.querySelectorAll('section[id]');
+        const navBtns  = document.querySelectorAll('.nav-btn[data-section]');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navBtns.forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.section === entry.target.id);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
+
+</body>
+</html>
