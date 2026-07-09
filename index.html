@@ -245,6 +245,10 @@
             font-weight: 700;
         }
 
+        .mobile-break {
+            display: none;
+        }
+
         .quote-card-attribution {
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
@@ -379,9 +383,10 @@
                 z-index: 10;
                 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
             }
-            .quote-card-body { font-size: 8px; line-height: 1.45; letter-spacing: -0.1px; margin-bottom: 8px; }
+            .quote-card-body { font-size: 8.5px; line-height: 1.5; letter-spacing: -0.1px; margin-bottom: 8px; }
             .open-mark { font-size: 11px; vertical-align: -2px; }
             .quote-card-attribution { font-size: 7px; }
+            .mobile-break { display: inline; }
 
             /* ── Bio ── */
             .bio-section { padding: 28px 16px 40px; max-width: 100%; }
@@ -442,8 +447,9 @@
             <img src="danielle.jpg?v=7" alt="Danielle Niyotwagira" class="about-photo">
             <div class="quote-card">
                 <p class="quote-card-body">
-                    <span class="open-mark">"</span>How foolish can you be? After starting your
-                    <span class="highlight">new lives in the Spirit</span>, why are you now trying to become
+                    <span class="open-mark">"</span>How foolish can you be? After<br class="mobile-break">
+                    starting your <span class="highlight">new lives in the Spirit</span>,<br class="mobile-break">
+                    why are you now trying to become<br class="mobile-break">
                     <span class="highlight">perfect by your own human effort?</span>"
                 </p>
                 <p class="quote-card-attribution">— Galatians 3:3 (NLT)</p>
